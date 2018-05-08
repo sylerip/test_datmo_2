@@ -1,0 +1,11 @@
+FROM datmo/datmo-prereq:16.04
+
+#Installing datmo-cli python package
+RUN pip install https://s3-us-west-1.amazonaws.com/datmo-public-scripts/datmo_cli-0.0.30-py2-none-any.whl
+
+ARG current_directory=/home/datmo/
+ENV current_directory=$current_directory
+
+RUN mkdir -p $current_directory
+WORKDIR $current_directory
+
